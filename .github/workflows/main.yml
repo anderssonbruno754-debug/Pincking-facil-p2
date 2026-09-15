@@ -23,7 +23,7 @@ jobs:
       - name: Descompactar projeto
         run: |
           mkdir projeto
-          unzip -q PickFacil_Projeto_Organizado.zip -d projeto
+          unzip -q PickFacil_Melhoria_1_Busca_Profissional.zip -d projeto
 
       - name: Instalar Gradle
         uses: gradle/actions/setup-gradle@v4
