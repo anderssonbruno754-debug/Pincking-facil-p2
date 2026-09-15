@@ -23,7 +23,7 @@ jobs:
       - name: Descompactar projeto
         run: |
           mkdir projeto
-          unzip -q PickFacil_Melhoria_2_Cadastro_Lotes_PRONTO_GITHUB.zip -d projeto
+          unzip -qPickFacil_Melhoria_2_Cadastro_Lotes_CORRIGIDA.zip  -d projeto
 
       - name: Instalar Gradle
         uses: gradle/actions/setup-gradle@v4
