@@ -1,0 +1,39 @@
+name: Gerar APK Pick Fácil
+
+on:
+  workflow_dispatch:
+  push:
+    branches:
+      - principal
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Baixar arquivos
+        uses: actions/checkout@v6
+
+      - name: Configurar Java 17
+        uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: '17'
+
+      - name: Descompactar projeto
+        run: |
+          mkdir projeto
+          unzip -q PickFacil_Projeto_Organizado.zip -d projeto
+
+      - name: Instalar Gradle
+        uses: gradle/actions/setup-gradle@v4
+
+      - name: Gerar APK
+        working-directory: projeto
+        run: gradle :app:assembleDebug
+
+      - name: Disponibilizar APK
+        uses: actions/upload-artifact@v4
+        with:
+          name: PickFacil-APK
+          path: projeto/app/build/outputs/apk/debug/app-debug.apk
