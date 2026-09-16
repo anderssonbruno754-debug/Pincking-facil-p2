@@ -22,7 +22,7 @@ jobs:
         run: |
           set -e
           mkdir -p projeto
-          ZIP=$(find . -maxdepth 2 -type f -name "PickFacil_iniia_7_Coleta_Profissional.zip" | head -n 1)
+          ZIP=$(find . -maxdepth 2 -type f -name "PickFacil_Melhoria_7_Coleta_Profissional.zip" | head -n 1)
           if [ -z "$ZIP" ]; then
             echo "ERRO: ZIP da melhoria não encontrado."
             exit 1
